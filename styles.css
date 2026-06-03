@@ -5071,7 +5071,7 @@ p  { margin: 0; }
 
 .tk-section {
   background: #fff;
-  padding: 24px 0 160px;
+  padding: 24px 0 64px;
   position: relative;
   overflow: visible;
 }
@@ -5483,7 +5483,7 @@ p  { margin: 0; }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .tk-section { padding: 20px 0 140px; }
+  .tk-section { padding: 20px 0 56px; }
   .benefits-intro { padding: 40px 0 16px; }
   /* Stack hero: image on top, panel slides up under it */
   .tk__hero {
@@ -5521,7 +5521,7 @@ p  { margin: 0; }
   }
 }
 @media (max-width: 640px) {
-  .tk-section { padding: 16px 0 100px; }
+  .tk-section { padding: 16px 0 44px; }
   .tk__image { height: 240px; border-radius: 18px; }
   .tk__head {
     width: calc(100% - 24px);
