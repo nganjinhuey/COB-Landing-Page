@@ -14,38 +14,62 @@ if (brows.length && 'IntersectionObserver' in window) {
   brows[0].classList.add('is-active');
 }
 
-// Telemedicine guide carousel
+// Telemedicine guide carousel — legacy, only runs if #telemedCarousel exists
 const tgCarousel = document.getElementById('telemedCarousel');
 if (tgCarousel) {
   const tgSteps = [
-    { title: 'Open MiCare Teleconsultation', desc: 'Tap "Start Chat" after entering the MiCare platform.' },
-    { title: 'Choose Symptoms', desc: 'Select symptoms to help the healthcare provider understand your condition.' },
-    { title: 'Begin Consultation', desc: 'Chat or speak with the assigned healthcare provider.' },
-    { title: 'Receive e-Prescription', desc: 'Receive digital prescription after consultation.' },
-    { title: 'Choose Medication Collection Method', desc: 'Choose either self-collection at Alpro Pharmacy or home delivery.' },
-    { title: 'Track Medication Delivery', desc: 'Track your medication delivery status directly through the platform.' }
+    {
+      title: 'Open MiCare Teleconsultation',
+      desc: 'After entering the MiCare healthcare platform through the WeKongsi app, tap "Start Chat" to begin your teleconsultation journey.',
+      note: 'Members may first be redirected to install or access the MiCare application if required.'
+    },
+    {
+      title: 'Choose Your Symptoms',
+      desc: 'Select the symptoms or medical condition you are currently experiencing so the healthcare provider can better understand your situation.',
+      note: 'You may select multiple symptoms and provide additional information if necessary.'
+    },
+    {
+      title: 'Begin Consultation with Doctor',
+      desc: 'You will be connected with a healthcare provider for online consultation through chat or voice call depending on the situation.',
+      note: 'Response time may vary depending on doctor availability.'
+    },
+    {
+      title: 'Receive E-Prescription',
+      desc: 'If medication is required, the healthcare provider may issue an e-prescription digitally through the MiCare healthcare platform.',
+      note: 'Medication support under COB is eligible up to RM50 per episode.'
+    },
+    {
+      title: 'Choose Medication Collection Method',
+      desc: 'Select whether you prefer self-collection at participating Alpro Pharmacy outlets, or arrange for home delivery to your address.',
+      note: 'Delivery charges are payable by member.'
+    },
+    {
+      title: 'Track Medication Delivery',
+      desc: 'If home delivery is selected, members may track the delivery status directly through the MiCare healthcare platform.',
+      note: 'Tracking updates and delivery timing may vary based on location and pharmacy processing.'
+    }
   ];
   const tgSlides  = tgCarousel.querySelectorAll('.tg__slide');
-  const tgDots    = tgCarousel.querySelectorAll('.tg__dot');
   const tgPrev    = document.getElementById('tgPrev');
   const tgNext    = document.getElementById('tgNext');
   const tgTitleEl = document.getElementById('tgTitle');
   const tgDescEl  = document.getElementById('tgDesc');
+  const tgNoteEl  = document.getElementById('tgNote');
   const tgNumEl   = document.getElementById('tgNum');
   let tgIndex = 0;
 
   const renderTg = () => {
+    const step = tgSteps[tgIndex];
     tgSlides.forEach((s, i) => s.classList.toggle('is-active', i === tgIndex));
-    tgDots.forEach((d, i)   => d.classList.toggle('is-active', i === tgIndex));
-    tgTitleEl.textContent = tgSteps[tgIndex].title;
-    tgDescEl.textContent  = tgSteps[tgIndex].desc;
+    tgTitleEl.textContent = step.title;
+    tgDescEl.textContent  = step.desc;
+    if (tgNoteEl) tgNoteEl.textContent = step.note;
     tgNumEl.textContent   = String(tgIndex + 1);
     tgPrev.disabled = tgIndex === 0;
     tgNext.disabled = tgIndex === tgSteps.length - 1;
   };
   tgPrev.addEventListener('click', () => { if (tgIndex > 0) { tgIndex--; renderTg(); } });
   tgNext.addEventListener('click', () => { if (tgIndex < tgSteps.length - 1) { tgIndex++; renderTg(); } });
-  tgDots.forEach((d, i) => d.addEventListener('click', () => { tgIndex = i; renderTg(); }));
   renderTg();
 }
 
