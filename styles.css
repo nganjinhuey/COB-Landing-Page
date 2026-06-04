@@ -5242,6 +5242,26 @@ p  { margin: 0; }
   margin: 0;
   font-weight: 450;
 }
+.tk__note {
+  display: flex; align-items: center; gap: 8px;
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  background: rgba(77,197,184,0.10);
+  border: 1px solid rgba(0,134,130,0.22);
+  border-left: 3px solid var(--tk-primary);
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--tk-navy);
+  font-weight: 500;
+}
+.tk__note svg { color: var(--tk-primary); flex-shrink: 0; }
+.tk__note a {
+  color: var(--tk-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.tk__note a:hover { color: var(--tk-navy); }
 
 /* 3 feature cards — stacked vertically, horizontal layout per card */
 .tk-cards {
