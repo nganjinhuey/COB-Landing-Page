@@ -160,3 +160,21 @@ if ('IntersectionObserver' in window) {
 } else {
   revealEls.forEach(el => el.classList.add('is-in'));
 }
+
+// Home page — latest month teaser for the Utilisation Report
+const urTeaser = document.getElementById('urTeaser');
+if (urTeaser && window.COB_UTILISATION) {
+  const m = window.COB_UTILISATION.months[window.COB_UTILISATION.months.length - 1];
+  const ms = document.documentElement.lang === 'ms';
+  const names = ms
+    ? ['Januari', 'Februari', 'Mac', 'April', 'Mei', 'Jun', 'Julai', 'Ogos', 'September', 'Oktober', 'November', 'Disember']
+    : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const vals = {
+    month: `${names[parseInt(m.id.slice(5), 10) - 1]} ${m.id.slice(0, 4)}`,
+    activeMembers: m.activeMembers.toLocaleString('en-MY'),
+    membersUsed: m.membersUsed.toLocaleString('en-MY'),
+    visits: m.visits.toLocaleString('en-MY')
+  };
+  urTeaser.querySelectorAll('[data-ur]').forEach(el => { el.textContent = vals[el.dataset.ur]; });
+  urTeaser.hidden = false;
+}

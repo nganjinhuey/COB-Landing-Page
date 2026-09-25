@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2026-06-langnote1" />
+  <link rel="stylesheet" href="styles.css?v=2026-09-util4" />
 </head>
 <body>
 
@@ -23,6 +23,7 @@
         <a href="#teleconsult">Teleconsultation</a>
         <a href="#clinicvisit">Lawatan Klinik</a>
         <a href="#start">Mula</a>
+        <a href="utilisation-bm.html">Laporan Penggunaan</a>
         <a href="#faq">Soalan Lazim</a>
       </nav>
       <div class="nav__actions">
@@ -573,6 +574,26 @@
       </div>
     </section>
 
+    <!-- 9b. MONTHLY UTILISATION REPORT -->
+    <section id="utilisation" class="section section--quiet ur-teaser">
+      <div class="container">
+        <div class="ur-teaser__card">
+          <div class="ur-teaser__copy">
+            <span class="eyebrow">Ketelusan</span>
+            <h2>Laporan <span class="grad">Penggunaan Bulanan</span></h2>
+            <p class="lead">Lihat bagaimana ahli menggunakan COB setiap bulan: bilangan ahli yang menggunakan manfaat, jumlah lawatan klinik, dan sebab paling biasa berjumpa doktor.</p>
+            <a href="utilisation-bm.html" class="btn btn--primary ur-teaser__btn">Lihat Laporan Penggunaan <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </div>
+          <div class="ur-teaser__stats" id="urTeaser" hidden>
+            <span class="ur-teaser__month">Laporan terkini: <strong data-ur="month"></strong></span>
+            <div class="ur-teaser__stat"><strong data-ur="activeMembers"></strong><span>Ahli aktif</span></div>
+            <div class="ur-teaser__stat"><strong data-ur="membersUsed"></strong><span>Ahli yang menggunakan COB</span></div>
+            <div class="ur-teaser__stat"><strong data-ur="visits"></strong><span>Lawatan klinik</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 10. FAQ -->
     <section id="faq" class="section">
       <div class="container">
@@ -690,6 +711,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="utilisation-data.js?v=2026-09c"></script>
+  <script src="script.js?v=2026-09c"></script>
 </body>
 </html>

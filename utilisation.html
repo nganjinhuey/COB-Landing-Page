@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WeKongsi COB Utilisation Report — monthly summary of how members use the Conditional Outpatient Benefit: clinic visits, reasons for visits and states." />
+  <title>COB Utilisation Report — WeKongsi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2026-09-util4" />
+</head>
+<body class="ur-page">
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="WeKongsi COB home">
+        <img src="wekongsilogo.jpg" alt="WeKongsi" class="nav__logo" />
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#what">What is COB</a>
+        <a href="index.html#teleconsult">Teleconsultation</a>
+        <a href="index.html#clinicvisit">Clinic Visits</a>
+        <a href="utilisation.html" class="is-current" aria-current="page">Utilisation Report</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <div class="nav__lang" role="group" aria-label="Language">
+          <a href="utilisation.html" class="nav__lang-btn is-active" aria-current="page">EN</a>
+          <a href="utilisation-bm.html" class="nav__lang-btn">BM</a>
+        </div>
+        <a href="WeKongsi-Members-Onboarding-Deck-V2-June2026.pdf?v=2026-06-04" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Member Guide</a>
+      </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="urApp">
+
+    <section class="ur-hero">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <span class="eyebrow eyebrow--center">Monthly Report</span>
+          <h2 class="ur-title">COB Utilisation <span class="grad">Report</span></h2>
+          <p class="ur-title-month" id="urTitleMonth"></p>
+          <p class="lead">A monthly look at how WeKongsi members use the Conditional Outpatient Benefit.</p>
+        </div>
+
+        <div class="ur-picker">
+          <label for="urMonths">View month</label>
+          <span class="ur-select"><select id="urMonths"></select></span>
+        </div>
+        <p class="ur-period">Reporting period: <strong id="urPeriod"></strong><span class="ur-partial" id="urPartial" hidden></span></p>
+        <div class="ur-download-wrap"><a class="btn btn--primary ur-download" id="urDownload" href="#" download hidden><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg><span id="urDownloadLabel"></span></a></div>
+      </div>
+    </section>
+
+    <section class="ur-body">
+      <div class="container">
+
+        <div class="ur-stats" id="urStats" aria-live="polite"></div>
+
+        <div class="ur-grid">
+          <article class="ur-card ur-card--wide">
+            <div class="ur-card__head">
+              <h3>Clinic visits each month</h3>
+              <span class="ur-card__meta"><strong id="urSince"></strong> clinic visits since COB launched</span>
+            </div>
+            <div class="ur-trend-wrap">
+              <div class="ur-trend" id="urTrend"></div>
+            </div>
+            <p class="ur-card__note">* June covers 7–30 June only, as COB started on 7 June 2026. Tap a month to see its details.</p>
+          </article>
+
+          <article class="ur-card">
+            <div class="ur-card__head">
+              <h3>Why members visited</h3>
+              <span class="ur-card__meta" id="urReasonsMonth"></span>
+            </div>
+            <ul class="ur-bars" id="urReasons"></ul>
+            <p class="ur-card__note">Grouped by the doctor's diagnosis. Each visit is counted once.</p>
+          </article>
+
+          <article class="ur-card">
+            <div class="ur-card__head">
+              <h3>Clinic visits by state</h3>
+              <span class="ur-card__meta" id="urStatesMonth"></span>
+            </div>
+            <ul class="ur-bars" id="urStates"></ul>
+            <p class="ur-card__note" id="urStatesNote" hidden></p>
+          </article>
+        </div>
+
+        <div class="ur-notes">
+          <div class="ur-note">
+            <h4>What this means for you</h4>
+            <ul>
+              <li>Most visits are for common illnesses such as coughs, colds, sore throats and sinus infections. These are all covered under COB.</li>
+              <li>Each clinic visit is supported up to <strong>RM120 per episode</strong>, and you get up to <strong>8 episodes a year</strong>.</li>
+              <li>You can also see a doctor online through teleconsultation, 9am to 10pm daily, without going to a clinic. <a href="index.html#teleconsult">How it works</a></li>
+            </ul>
+          </div>
+          <div class="ur-note ur-note--plain">
+            <h4>About these figures</h4>
+            <ul>
+              <li>Figures come from the monthly COB reports prepared with our healthcare partners HEYDOC Health and MiCare.</li>
+              <li><strong>Active members</strong> are members whose COB was active during that month.</li>
+              <li>A member who visited a clinic more than once in a month is counted once under "Members who used COB".</li>
+              <li>The report is updated monthly.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer footer--slim">
+    <div class="footer__wrap">
+      <div class="footer__brand-row">
+        <div class="footer__brand-mark">WeKongsi <span>COB</span></div>
+        <p class="footer__tagline">Healthcare Support Made Accessible</p>
+      </div>
+
+      <div class="footer__cols">
+        <div class="footer__col">
+          <span class="footer__heading">Contact</span>
+          <ul class="footer__list">
+            <li><span aria-hidden="true">📞</span> <a href="tel:60108768760">010-876 8760</a></li>
+            <li><span aria-hidden="true">✉</span> <a href="mailto:info@wekongsi.com">info@wekongsi.com</a></li>
+            <li><span aria-hidden="true">🌐</span> <a href="https://www.wekongsi.com" target="_blank" rel="noopener">www.wekongsi.com</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <span class="footer__heading">Customer Support</span>
+          <ul class="footer__list">
+            <li>Monday – Friday</li>
+            <li>9:00 AM – 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__disclaimer">
+        <p>COB (Conditional Outpatient Benefit) is a healthcare support programme available to eligible WeKongsi members.</p>
+        <p>WeKongsi is not an insurance company or takaful operator. COB is not an insurance policy or takaful product.</p>
+        <p>Benefits are subject to programme eligibility, participating healthcare providers, operational terms, and applicable coverage conditions.</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__wrap">
+        <span>© 2026 WeKongsi. All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="utilisation-data.js?v=2026-09c"></script>
+  <script src="utilisation.js?v=2026-09c"></script>
+  <script src="script.js?v=2026-09c"></script>
+</body>
+</html>
