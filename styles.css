@@ -6619,3 +6619,36 @@ p  { margin: 0; }
   .nav__lang-btn { min-width: 26px; padding: 4px 5px; font-size: 11.5px; }
   .nav__actions .btn--sm { padding: 7px 9px; font-size: 12px; }
 }
+
+/* URTI Pay & Claim remark (Eligible Diagnoses card) */
+.cv-urti {
+  margin-top: 18px; padding: 18px 20px;
+  background: rgba(77,197,184,0.10);
+  border: 1px solid rgba(0,134,130,0.22);
+  border-left: 3px solid var(--tk-primary);
+  border-radius: 12px;
+  color: var(--tk-navy);
+}
+.cv-urti__head { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 8px; }
+.cv-urti__badge {
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: #fff; background: var(--navy-900); padding: 4px 10px; border-radius: 999px;
+}
+.cv-urti__title { font-size: 16px; font-weight: 700; color: var(--tk-navy); }
+.cv-urti__title sup { color: var(--tk-primary); }
+.cv-urti__body { font-size: 13.5px; line-height: 1.6; margin: 0 0 14px; }
+.cv-urti__caps { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 520px; }
+.cv-urti__cap {
+  background: #fff; border: 1px solid rgba(0,134,130,0.18); border-radius: 10px;
+  padding: 10px 14px; display: flex; flex-direction: column; gap: 2px;
+}
+.cv-urti__cap span { font-size: 12.5px; color: var(--ink-600); font-weight: 600; }
+.cv-urti__cap strong { font-size: 22px; font-weight: 800; color: var(--tk-navy); line-height: 1.2; }
+.cv-urti__cap strong small { font-size: 12px; font-weight: 600; color: var(--ink-500); margin-right: 2px; }
+.cv-urti__foot { display: flex; gap: 8px; align-items: flex-start; margin: 14px 0 0; font-size: 13px; line-height: 1.55; }
+.cv-urti__foot svg { color: var(--tk-primary); flex-shrink: 0; margin-top: 2px; }
+@media (max-width: 420px) {
+  .cv-urti { padding: 16px 14px; }
+  .cv-urti__caps { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cv-urti__cap strong { font-size: 19px; }
+}
