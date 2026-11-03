@@ -7,7 +7,7 @@
 // Reason keys map to labels in utilisation.js (REASON_LABELS).
 
 window.COB_UTILISATION = {
-  updated: '2026-10-05',
+  updated: '2026-11-03',
   months: [
     {
       id: '2026-06',
@@ -54,6 +54,17 @@ window.COB_UTILISATION = {
       telemedicine: 0,
       reasons: { cold: 259, sinus: 53, stomach: 49, sprain: 39, gastritis: 35, flu: 23, chest: 22, skin: 18, other: 49 },
       states: { Selangor: 198, Johor: 73, 'Negeri Sembilan': 57, Melaka: 55, 'Kuala Lumpur': 50, Terengganu: 20, Kelantan: 20, Kedah: 19, Perak: 18, Pahang: 16, 'Pulau Pinang': 10, Perlis: 4, Sabah: 4, Putrajaya: 2, Sarawak: 1 }
+    },
+    {
+      id: '2026-10',
+      report: 'reports/WeKongsi-COB-Report-2026-10.pdf',
+      period: { en: '1 – 31 October 2026', ms: '1 – 31 Oktober 2026' },
+      activeMembers: 5870,
+      membersUsed: 467,
+      visits: 545,
+      telemedicine: 2,
+      reasons: { cold: 232, stomach: 67, sinus: 45, gastritis: 38, flu: 33, skin: 26, chest: 21, sprain: 17, other: 66 },
+      states: { Selangor: 183, Melaka: 66, Johor: 56, 'Negeri Sembilan': 50, 'Kuala Lumpur': 34, Terengganu: 26, Kelantan: 25, 'Pulau Pinang': 25, Pahang: 25, Kedah: 20, Perak: 20, Sabah: 9, Perlis: 3, Putrajaya: 2, Sarawak: 1 }
     }
   ]
 };
